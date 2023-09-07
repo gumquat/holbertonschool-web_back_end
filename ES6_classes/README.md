@@ -320,3 +320,27 @@ export default class HolbertonClass {
 * Implement the conversion to a Number by overriding the valueOf method. This method should return the value of the _size attribute.
 * Implement the conversion to a String by overriding the toString method. This method should return the value of the _location attribute.
 * By overriding the valueOf method, when an instance of HolbertonClass is cast into a Number, it will return the value of the _size attribute. Similarly, by overriding the toString method, when an instance of HolbertonClass is cast into a String, it will return the value of the _location attribute.
+
+## problem 9
+```
+
+```
+
+## problem 10
+```
+export default class Car {
+  constructor(brand, motor, color) {
+    this._brand = brand;
+    this._motor = motor;
+    this._color = color;
+  }
+
+  cloneCar() {
+    return new this.constructor();
+  }
+}
+```
+* `export default class Car { ... }:` ` This line exports the Car class as the default export. It means that when importing this module in another file, the Car class will be the default import. The export default syntax is commonly used in JavaScript modules to export a single value or class.
+* `constructor(brand, motor, color) { ... }:` The constructor method is a special method that is automatically called when a new instance of the class is created. It takes three parameters: brand, motor, and color. Inside the constructor, the provided values are stored in the corresponding underscored attribute versions (_brand, _motor, _color). These attributes are prefixed with an underscore to indicate that they are intended to be treated as private.
+* `cloneCar() { ... }:` This is a method defined within the Car class. It does not take any parameters. Inside the method, a new instance of the class is created using new this.constructor(). The this.constructor refers to the class itself, so new this.constructor() creates a new instance of the same class. The method returns this new instance.
+* `The purpose of the cloneCar()` method is to create a new instance of the Car class that is a clone of the original instance. This can be useful when you want to create a copy of an existing object without modifying the original object.
