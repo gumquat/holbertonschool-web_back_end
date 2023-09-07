@@ -1,5 +1,5 @@
 export default class Airport {
-  cosntructor (name, code) {
+  constructor (name, code) {
     if (typeof name !== 'string') {
       throw new TypeError ('Expected a string');
     }
