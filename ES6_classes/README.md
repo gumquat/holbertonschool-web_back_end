@@ -63,5 +63,59 @@ export default function initializeRooms() {
 
 ## problem 2
 ```
+export default class HolbertonCourse {
+  constructor(name, length, students) {
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    if (typeof length !== 'number') {
+      throw new TypeError('Length must be a number');
+    }
+    if (!Array.isArray(students)) {
+      throw new TypeError('Students must be an array');
+    }
 
+    this._name = name;
+    this._length = length;
+    this._students = students;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    this._name = value;
+  }
+
+  get length() {
+    return this._length;
+  }
+
+  set length(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('Length must be a number');
+    }
+    this._length = value;
+  }
+
+  get students() {
+    return this._students;
+  }
+
+  set students(value) {
+    if (!Array.isArray(value)) {
+      throw new TypeError('Students must be an array');
+    }
+    this._students = value;
+  }
+}
 ```
+* The HolbertonCourse class accepts three parameters (name, length, and students) in its constructor.
+* The constructor checks the type of each parameter and throws a TypeError if the type is not as expected.
+* The name, length, and students parameters are assigned to the corresponding underscore attributes (_name, _length, and _students).
+* Getter methods (get) are implemented for each attribute to retrieve their values.
+* Setter methods (set) are implemented for each attribute to set new values. The setter methods also perform type checking before assigning the new values.
