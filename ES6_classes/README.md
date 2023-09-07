@@ -301,7 +301,7 @@ export default class Airport {
 ## problem 8
 ```
 export default class HolbertonClass {
-  constructor (size, location) {
+  constructor(size, location) {
     this._size = size;
     this._location = location;
   }
