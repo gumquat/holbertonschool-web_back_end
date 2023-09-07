@@ -297,3 +297,26 @@ export default class Airport {
 * If both parameters pass the type checks, the name and code parameters are stored in underscored attribute versions, _name and _code.
 * The toString method is defined in the Airport class. It returns a string that represents the object, using the _code attribute.
 * This code ensures that the name and code parameters passed to the Airport constructor are of type string. If either of them is not a string, a TypeError is thrown, indicating the expected type.
+
+## problem 8
+```
+export default class HolbertonClass {
+  constructor (size, location) {
+    this._size = size;
+    this._location = location;
+  }
+
+  valueOf() {
+    return this._size;
+  }
+
+  toString() {
+    return this._location;
+  }
+}
+```
+* Create the HolbertonClass with the specified constructor attributes: size (Number) and location (String).
+* Store the attributes in underscored attribute versions (_size and _location).
+* Implement the conversion to a Number by overriding the valueOf method. This method should return the value of the _size attribute.
+* Implement the conversion to a String by overriding the toString method. This method should return the value of the _location attribute.
+* By overriding the valueOf method, when an instance of HolbertonClass is cast into a Number, it will return the value of the _size attribute. Similarly, by overriding the toString method, when an instance of HolbertonClass is cast into a String, it will return the value of the _location attribute.
