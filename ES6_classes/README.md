@@ -168,3 +168,55 @@ export default class Currency {
 * Getter methods (get) are implemented for each attribute to retrieve their values.
 * Setter methods (set) are implemented for each attribute to set new values. The setter methods also perform type checking before assigning the new values.
 * The displayFullCurrency method returns the attributes in the specified format (name (code)).
+
+## problem 4
+```
+import Currency from './3-currency';
+
+export default class Pricing {
+  constructor(amount, currency) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('Amount must be a number');
+    }
+    if (!(currency instanceof Currency)) {
+      throw new TypeError('Expected an instance of Currency');
+    }
+
+    this._amount = amount;
+    this._currency = currency;
+  }
+
+  get amount() {
+    return this._amount;
+  }
+
+  set amount(newAmount) {
+    this._amount = newAmount;
+  }
+
+  get currency() {
+    return this._currency;
+  }
+
+  set currency(newCurrency) {
+    if (!(newCurrency instanceof Currency)) {
+      throw new TypeError('Expected an instance of Currency');
+    }
+    this._currency = newCurrency;
+  }
+
+  displayFullPrice() {
+    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
+  }
+
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
+  }
+}
+```
+* The code begins with an import statement: import Currency from './3-currency';. This imports the Currency class from the file 3-currency.js (or 3-currency.ts if it's a TypeScript file) located in the same directory as the current file. The Currency class is used as a type in the constructor and setter methods of the Pricing class.
+* The class Pricing is defined using the export default syntax, which means it can be imported and used in other files. The class has the following members:
+* Constructor: The constructor method takes two parameters: amount and currency. It checks the type of amount and throws a TypeError if it's not a number. It also checks if currency is an instance of the Currency class and throws a TypeError if it's not. The constructor assigns the values of amount and currency to the corresponding underscore attributes (_amount and _currency).
+* Getter and Setter Methods: The class defines getter and setter methods for the amount and currency attributes. The getter methods (get) return the values of the corresponding underscore attributes. The setter methods (set) update the values of the underscore attributes with new values.
+* displayFullPrice Method: This method returns a formatted string that represents the full price. It uses string interpolation to combine the values of _amount, _currency.name, and _currency.code in the specified format.
+* Static convertPrice Method: This static method accepts two arguments (amount and conversionRate) and returns the result of multiplying the amount by the conversionRate.
