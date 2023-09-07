@@ -269,3 +269,31 @@ export default class SkyHighBuilding extends Building {
 * The class also has a getter method floors that returns the value of the _floors property.
 * The evacuationWarningMessage method is defined in the SkyHighBuilding class. It returns a string that includes the number of floors.
 * The SkyHighBuilding class extends the Building class, inheriting its properties and methods. It adds a new property (floors) and a new method (evacuationWarningMessage).
+
+## problem 7
+```
+export default class Airport {
+  constructor (name, code) {
+    if (typeof name !== 'string') {
+      throw new TypeError ('Expected a string');
+    }
+    if (typeof code !== 'string') {
+      throw new TypeError ('Expected string');
+    }
+    
+    this._name = name;
+    this._code = code;
+  }
+
+    toString() {
+      return `[object ${this._code}]`;
+    }
+}
+```
+* The Airport class has a constructor that takes two parameters: name and code.
+* Inside the constructor, there are two conditional statements that check the types of the name and code parameters using the typeof operator.
+* If the name parameter is not of type string, it throws a TypeError with the message "Expected a string".
+* If the code parameter is not of type string, it throws a TypeError with the message "Expected string".
+* If both parameters pass the type checks, the name and code parameters are stored in underscored attribute versions, _name and _code.
+* The toString method is defined in the Airport class. It returns a string that represents the object, using the _code attribute.
+* This code ensures that the name and code parameters passed to the Airport constructor are of type string. If either of them is not a string, a TypeError is thrown, indicating the expected type.
