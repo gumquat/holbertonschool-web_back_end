@@ -39,9 +39,9 @@ export default class ClassRoom {
 
 ## problem 1
 ```
-import ClassRoom from './path/to/ClassRoom.js';
+import ClassRoom from './0-classroom';
 
-function initializeRooms() {
+export default function initializeRooms() {
   const rooms = [];
 
   const room1 = new ClassRoom(19);
@@ -54,7 +54,7 @@ function initializeRooms() {
 }
 ```
 * ClassRoom is the name of the class that you want to import.
-* ./path/to/ClassRoom.js is the relative path to the file where the ClassRoom class is defined. Make sure to adjust the path according to your project's file structure.
+* ./0-classroom is the relative path to the file where the ClassRoom class is defined. Make sure to adjust the path according to your project's file structure.
 * Import the ClassRoom class using the import statement.
 * Create an array literal rooms to store the ClassRoom objects.
 * Create three instances of the ClassRoom class using the new keyword and pass the desired sizes as arguments.
