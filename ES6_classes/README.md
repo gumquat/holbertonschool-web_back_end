@@ -119,3 +119,52 @@ export default class HolbertonCourse {
 * The name, length, and students parameters are assigned to the corresponding underscore attributes (_name, _length, and _students).
 * Getter methods (get) are implemented for each attribute to retrieve their values.
 * Setter methods (set) are implemented for each attribute to set new values. The setter methods also perform type checking before assigning the new values.
+
+## problem 3
+```
+export default class Currency {
+  constructor(code, name) {
+    if (typeof code !== 'string') {
+      throw new TypeError('Code must be a string');
+    }
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+
+    this._code = code;
+    this._name = name;
+  }
+
+  get code() {
+    return this._code;
+  }
+
+  set code(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Code must be a string');
+    }
+    this._code = value;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    this._name = value;
+  }
+
+  displayFullCurrency() {
+    return `${this._name} (${this._code})`;
+  }
+}
+```
+* The Currency class accepts two parameters (code and name) in its constructor.
+* The constructor checks the type of each parameter and throws a TypeError if the type is not as expected.
+* The code and name parameters are assigned to the corresponding underscore attributes (_code and _name).
+* Getter methods (get) are implemented for each attribute to retrieve their values.
+* Setter methods (set) are implemented for each attribute to set new values. The setter methods also perform type checking before assigning the new values.
+* The displayFullCurrency method returns the attributes in the specified format (name (code)).
