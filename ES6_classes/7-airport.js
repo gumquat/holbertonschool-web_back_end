@@ -1,12 +1,5 @@
 export default class Airport {
-  constructor(name, code) {
-    if (typeof name !== 'string') {
-      throw new TypeError ('Expected a string');
-    }
-    if (typeof code !== 'string') {
-      throw new TypeError ('Expected string');
-    }
-    
+  constructor(name, code) {    
     this._name = name;
     this._code = code;
   }
