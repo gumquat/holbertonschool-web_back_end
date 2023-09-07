@@ -221,3 +221,51 @@ export default class Pricing {
 * displayFullPrice Method: This method returns a formatted string that represents the full price. It uses string interpolation to combine the values of _amount, _currency.name, and _currency.code in the specified format.
 * Static convertPrice Method: This static method accepts two arguments (amount and conversionRate) and returns the result of multiplying the amount by the conversionRate.
 * The code assumes that there is a separate file named 3-currency.js (or 3-currency.ts) in the same directory that exports the Currency class. The Currency class is used as a type in the constructor and setter methods of the Pricing class to ensure that the currency parameter is an instance of the Currency class.
+
+## problem 5
+```
+export default class Building {
+  constructor(sqft) {
+    if (this.constructor !== Building && !this.evacuationWarningMessage) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
+    this._sqft = sqft;
+  }
+
+  get sqft() {
+    return this._sqft;
+  }
+}
+```
+* The Building class has a constructor that takes a parameter sqft.
+* Inside the constructor, there is a condition that checks if the constructor is being called from a subclass (i.e., this.constructor !== Building) and if the subclass does not have a property evacuationWarningMessage.
+* If the condition is true, it throws an error with the message "Class extending Building must override evacuationWarningMessage".
+* If the condition is false, it assigns the sqft parameter to the instance property _sqft.
+* The class also has a getter method sqft that returns the value of the _sqft property.
+* The purpose of this code is to ensure that any subclass of the Building class must override the evacuationWarningMessage property, otherwise, an error will be thrown.
+
+## problem 6
+```
+import Building from './5-building';
+
+export default class SkyHighBuilding extends Building {
+  constructor(sqft, floors) {
+    super(sqft);
+    this._floors = floors;
+  }
+
+  get floors() {
+    return this._floors;
+  }
+
+  evacuationWarningMessage() {
+    return `Evacuate slowly the ${this._floors} floors`;
+  }
+}
+```
+* The SkyHighBuilding class has a constructor that takes two parameters, sqft and floors.
+* Inside the constructor, the super(sqft) statement is used to call the constructor of the Building class, passing the sqft parameter. This initializes the sqft property of the Building class.
+* The floors parameter is assigned to the instance property _floors.
+* The class also has a getter method floors that returns the value of the _floors property.
+* The evacuationWarningMessage method is defined in the SkyHighBuilding class. It returns a string that includes the number of floors.
+* The SkyHighBuilding class extends the Building class, inheriting its properties and methods. It adds a new property (floors) and a new method (evacuationWarningMessage).
