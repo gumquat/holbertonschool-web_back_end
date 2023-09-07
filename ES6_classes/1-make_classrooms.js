@@ -1,4 +1,4 @@
-import ClassRoom from './path/to/ClassRooms.js';
+import ClassRoom from './0-classroom.js';
 
 function initializeRooms() {
   const rooms = [];
