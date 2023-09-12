@@ -1,11 +1,13 @@
-//imports
-import updateUniqueItems from "./10-update_uniq_items.js";
-import groceriesList from "./9-groceries_list.js";
+function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
+    throw new Error('Cannot process');
+  }
 
-// im the map im the map is the map im the map im the map im the map
-const imthemap = groceriesList();
-console.log(imthemap);
+  map.forEach((value, key) => {
+    if (value === 1) {
+      map.set(key, 100);
+    }
+  });
 
-//call that old function here
-updateUniqueItems(imthemap)
-console.log(imthemap);
+  return map;
+}
